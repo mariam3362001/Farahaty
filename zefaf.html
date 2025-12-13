@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> تجهيزات الزفاف</title>
+
+  <style>
+    :root{
+      --accent:#580e0e;
+      --bg:#dbdff1e3;
+      --card-bg:#b3abd8f3;
+      --shadow: 0 6px 20px rgba(43, 24, 153, 0.719);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Cairo", sans-serif, Arial;
+      background:var(--bg);
+      color:#0a0422be;
+      padding-bottom:80px;
+    }
+
+    .service-page{
+      text-align:center;
+      padding:90px 20px 40px;
+      background:linear-gradient(180deg, rgba(143, 43, 201, 0.26), transparent);
+    }
+    .service-page h1{margin:6px 0; font-weight:600;}
+
+    /* ===== reusable slider wrapper ===== */
+    .venue-slider {
+      width: 50%;
+      max-width: 980px;
+      margin: 40px auto;
+      position: relative;
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .venue-slider .slider-viewport{
+      position: relative;
+      height: 420px; /* ارتفاع الصندوق الرئيسي */
+      display: block;
+      overflow: hidden;
+      border-radius: 12px;
+      background: #685353; /* لو الصورة لم تملأ الفورم */
+    }
+
+    /* كل سلايد يغطي نفس المساحة (مربع/مستطيل) */
+    .venue-slider .slide {
+      position: absolute;
+      inset: 0; /* top:0;right:0;bottom:0;left:0; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      opacity: 0;
+      transition: opacity .6s ease, transform .6s ease;
+      transform: scale(.98);
+      padding: 10px;
+      gap:5px;
+    }
+    .venue-slider .slide.active{
+      opacity: 1;
+      transform: scale(1);
+      z-index: 2;
+    }
+
+    /* الصورة داخل السلايد */
+    .venue-slider .slide img{
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(230, 233, 240, 0.733);
+    }
+
+    /* اسم القاعة والسعر تحت الصورة */
+    .venue-slider .caption{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      padding: 6px 8px;
+      background: linear-gradient(90deg, rgba(214, 126, 126, 0.95), rgba(144, 129, 201, 0.9));
+      border-radius: 10px;
+      font-weight:600;
+      color:#040435;
+    }
+    .venue-slider .caption .name{font-size:18px}
+    .venue-slider .caption .price{font-size:16px; color:var(--accent)}
+
+    /* أسهم */
+    .venue-slider .prev,
+    .venue-slider .next{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border:none;
+      background: rgba(107, 23, 163, 0.5);
+      color:#640a0a;
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      font-size:24px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+    .venue-slider .prev{ left: 12px; }
+    .venue-slider .next{ right: 12px; }
+
+    .venue-slider .prev:hover,
+    .venue-slider .next:hover{ background: rgba(0,0,0,0.75); }
+
+    /* نقاط */
+    .venue-slider .dots{
+      display:flex;
+      gap:8px;
+      justify-content:center;
+      align-items:center;
+      margin-top:14px;
+    }
+    .venue-slider .dot{
+      width:12px; height:12px; border-radius:50%;
+      background:#d0d0d0; cursor:pointer;
+      transition:transform .2s, background2s;
+    }
+    .venue-slider .dot.active{ background:var(--accent); transform:scale(1.25); }
+
+    /* مسافة بين سلايدر وآخر (safa) */
+    .spacer{ height:28px; }
+
+    /* responsive */
+    @media (max-width:800px){
+      .venue-slider .slider-viewport{ height:340px }
+      .venue-slider .slide img{ height:240px }
+    }
+    @media (max-width:480px){
+      .venue-slider .slider-viewport{ height:300px }
+      .venue-slider .slide img{ height:200px }
+      .service-page{ padding-top:70px }
+    }
+
+    /* زر الحجز بالأسفل (مثال) */
+    .booking { width:90%; max-width:800px; margin:40px auto; background:rgba(187, 110, 123, 0.678); padding:18px; border-radius:12px; box-shadow:var(--shadow); }
+    .booking input, .booking select, .booking button { width:100%; padding:10px; margin-top:8px; border-radius:8px; border:1px solid #a12645af; }
+    .booking button{ background:var(--accent); color:rgb(255, 255, 255); border:none; font-weight:700; cursor:pointer; }
+  </style>
+</head>
+
+<body>
+
+  <div class="service-page">
+    <h1>حفلات الزفاف الفخمة...نحن من نصنعها</h1>
+    <h1>نحن من نصنعها كل ما تحتاجه في مكان واحد... معنا حلمك واقع لا يُنسى</h1>
+  </div>
+
+  <!-- ======= Slider (القاعات) ======= -->
+  <section class="venue-slider" data-slider-id="1">
+    <div class="slider-viewport">
+      <!-- slide 1 -->
+      <div class="slide active">
+        <img src="img/8ab9a99fca824c3775321149be33164e.jpg" alt="قاعة قصر صنعاء">
+        <div class="caption">
+          <div class="name">قاعة</div>
+          <div class="price">??ريال</div>
+        </div>
+      </div>
+
+      <!-- slide 2 -->
+      <div class="slide">
+        <img src="img/e9bff92ff0ceb451abd54124c7d796b0.jpg" alt="قاعة الماس">
+        <div class="caption">
+          <div class="name">قاعة</div>
+          <div class="price">??ريال</div>
+        </div>
+      </div>
+
+      <!-- slide 3 -->
+      <div class="slide">
+        <img src="img/6fd028a5ac09ddf4f58cde9fd1b9ec13.jpg" alt="قاعة السندريلا">
+        <div class="caption">
+          <div class="name">قاعة</div>
+          <div class="price">??ريال</div>
+        </div>
+      </div>
+      
+      <!-- أضف بقية الصور بنفس البنية حتى تصل 20 -->
+    </div>
+
+    <button class="prev" aria-label="السابق">&#10094;</button>
+    <button class="next" aria-label="التالي">&#10095;</button>
+
+    <div class="dots" aria-hidden="false"></div>
+  </section>
+
+  <div class="spacer"></div>
+  
+  
+  
+<!-- ======= Slider (الديجي) ======= -->
+  <section class="venue-slider" data-slider-id="2">
+    <div class="slider-viewport">
+      <div class="slide active">
+        <img src="img/90b0c5f3782ce3a756ec7b1d1331e6a5.jpg" alt="دي جي روز">
+        <div class="caption">
+          <div class="name">دي جي </div>
+          <div class="price">??ريال ريال</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="img/90b0c5f3782ce3a756ec7b1d1331e6a5.jpg" alt="دي جي مكس">
+        <div class="caption">
+          <div class="name">دي جي </div>
+          <div class="price">??ريال</div>
+        </div>
+      </div>
+
+      <!-- أضف حتى 20 عند الحاجة -->
+    </div>
+
+    <button class="prev" aria-label="السابق">&#10094;</button>
+    <button class="next" aria-label="التالي">&#10095;</button>
+
+    <div class="dots"></div>
+  </section>
+
+  
+  
+  <!-- ======= Slider3 (الفنانين) ======= -->
+   <section class="venue-slider" data-slider-id="2">
+    <div class="slider-viewport">
+      <div class="slide active">
+        <img src="img/24a481c7ffbf6e745f16a647d2902d8e.jpg" alt="دي جي روز">
+        <div class="caption">
+          <div class="name"> الفنان </div>
+          <div class="price">??ريال</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="img/24a481c7ffbf6e745f16a647d2902d8e.jpg" alt="دي جي مكس">
+        <div class="caption">
+          <div class="name">  الفنان</div>
+          <div class="price">??ريال</div>
+        </div>
+      </div>
+
+      <!-- أضف حتى 20 عند الحاجة -->
+    </div>
+
+    <button class="prev" aria-label="السابق">&#10094;</button>
+    <button class="next" aria-label="التالي">&#10095;</button>
+
+    <div class="dots"></div>
+  </section>
+  
+  
+  
+  <!-- ======= Slider4 (الفنانات) ======= -->
+   <section class="venue-slider" data-slider-id="2">
+    <div class="slider-viewport">
+      <div class="slide active">
+        <img src="img/24a481c7ffbf6e745f16a647d2902d8e.jpg" alt="دي جي روز">
+        <div class="caption">
+          <div class="name">الفنانه</div>
+          <div class="price">? ريال</div>
+        </div>
+      </div>
+
+      
+      <!-- أضف حتى 20 عند الحاجة -->
+    </div>
+
+    <button class="prev" aria-label="السابق">&#10094;</button>
+    <button class="next" aria-label="التالي">&#10095;</button>
+
+    <div class="dots"></div>
+  </section>
+  
+  
+  
+  <!-- ======= Slider5 (المصورين) ======= -->
+   <section class="venue-slider" data-slider-id="2">
+    <div class="slider-viewport">
+      <div class="slide active">
+        <img src="img/f66f006de693cd88ed89412854e016d9.jpg" alt="دي جي روز">
+        <div class="caption">
+          <div class="name">المصور</div>
+          <div class="price">?ريال</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="img/f66f006de693cd88ed89412854e016d9.jpg" alt="دي جي مكس">
+        <div class="caption">
+          <div class="name">المصور</div>
+          <div class="price">? ريال</div>
+        </div>
+      </div>
+
+      <!-- أضف حتى 20 عند الحاجة -->
+    </div>
+
+    <button class="prev" aria-label="السابق">&#10094;</button>
+    <button class="next" aria-label="التالي">&#10095;</button>
+
+    <div class="dots"></div>
+  </section>
+  
+  
+  <!-- ======= Slider6 (المصورات) ======= -->
+   <section class="venue-slider" data-slider-id="2">
+    <div class="slider-viewport">
+      <div class="slide active">
+        <img src="img/f66f006de693cd88ed89412854e016d9.jpg" alt="دي جي روز">
+        <div class="caption">
+          <div class="name">المصوره</div>
+          <div class="price">?ريال</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="img/f66f006de693cd88ed89412854e016d9.jpg" alt="دي جي مكس">
+        <div class="caption">
+         <div class="name">المصوره</div>
+          <div class="price"> ريال</div>
+        </div>
+      </div>
+
+      <!-- أضف حتى 20 عند الحاجة -->
+    </div>
+
+    <button class="prev" aria-label="السابق">&#10094;</button>
+    <button class="next" aria-label="التالي">&#10095;</button>
+
+    <div class="dots"></div>
+  </section>
+  
+  <!-- نموذج الحجز (أصلحت string interpolation) -->
+  <div class="booking">
+    <h2 style="text-align:center; color:#0d3c63be;">حجز منسق حفلات</h2>
+
+    <label>الاسم الكامل</label>
+    <input id="nameInput" type="text" placeholder="ادخل اسمك">
+
+    <label>تاريخ المناسبة</label>
+    <input id="dateInput" type="date">
+
+    <label>القاعه</label>
+    <select id="occasionSelect">
+      <option>قاعة1</option>
+      <option>قاعة2</option>
+      <option>قاعة3 </option>
+      <option> قاعة4</option>
+      <option>أخرى</option>
+    </select>
+    
+    
+    <label>الديجي</label>
+    <select id="occasionSelect">
+      <option>دي جي1</option>
+      <option>دي جي2 </option>
+      <option> دي جي3</option>
+      <option>دي جي4</option>
+      <option>أخرى</option>
+    </select>
+    
+    
+     <label>الفنان/ة</label>
+    <select id="occasionSelect">
+      <option>فنان1</option>
+      <option> فنان2</option>
+      <option>أخرى</option>
+    </select>
+
+
+
+     <label>المصور/ة</label>
+    <select id="occasionSelect">
+      <option>المصور1</option>
+      <option> المصوره1</option>
+      <option>أخرى</option>
+    </select>
+
+
+    <button id="whatsappBtn">تأكيد الحجز عبر واتساب</button>
+  </div>
+
+  <script>
+    /* ===== Slider generic script for all .venue-slider instances ===== */
+    (function(){
+      const sliders = document.querySelectorAll('.venue-slider');
+
+      sliders.forEach((sliderEl) => {
+        const viewport = sliderEl.querySelector('.slider-viewport');
+        const slides = Array.from(viewport.querySelectorAll('.slide'));
+        const prevBtn = sliderEl.querySelector('.prev');
+        const nextBtn = sliderEl.querySelector('.next');
+        const dotsContainer = sliderEl.querySelector('.dots');
+
+        let index = 0;
+        const total = slides.length;
+
+        // create dots
+        slides.forEach((s, i) => {
+          const d = document.createElement('div');
+          d.className = 'dot' + (i===0 ? ' active' : '');
+          d.addEventListener('click', () => goTo(i));
+          dotsContainer.appendChild(d);
+        });
+
+        const dots = Array.from(dotsContainer.children);
+
+        function update(){
+          slides.forEach((s, i) => {
+            s.classList.toggle('active', i === index);
+          });
+          dots.forEach((d, i) => d.classList.toggle('active', i === index));
+        }
+
+        function next(){
+          index = (index + 1) % total;
+          update();
+        }
+        function prev(){
+          index = (index - 1 + total) % total;
+          update();
+        }
+        function goTo(i){
+          index = (i + total) % total;
+          update();
+        }
+
+        // attach events
+        nextBtn && nextBtn.addEventListener('click', next);
+        prevBtn && prevBtn.addEventListener('click', prev);
+
+        // auto-play (اختياري) - يمكنك تعطيله لو أحببت
+        let autoplay = true;
+        let interval = 3500;
+        let timer = null;
+        if (autoplay && total > 1){
+          timer = setInterval(next, interval);
+
+          // pause on hover
+          sliderEl.addEventListener('mouseenter', () => clearInterval(timer));
+          sliderEl.addEventListener('mouseleave', () => {
+            timer = setInterval(next, interval);
+          });
+        }
+      });
+    })();
+
+    /* ===== WhatsApp booking corrected ===== */
+    (function(){
+      const btn = document.getElementById('whatsappBtn');
+      btn.addEventListener('click', () => {
+        const name = document.getElementById('nameInput').value || 'غير مذكور';
+        const occasion = document.getElementById('occasionSelect').value || 'غير مذكور';
+        const date = document.getElementById('dateInput').value || 'غير مذكور';
+
+        const phone = "https://wa.me/qr/JWMHAGVXFRUYJ1"; // ضع رقمك هنا بصيغة البلد+رقم (بدون +)
+
+        const msg =
+`السلام عليكم،
+أرغب بالحجز بالبيانات التالية:.
+
+الاسم: ${name}
+نوع المناسبة: ${occasion}
+تاريخ المناسبة: ${date}`;
+
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+        window.open(url, "_blank");
+      });
+    })();
+  </script>
+
+</body>
+</html>

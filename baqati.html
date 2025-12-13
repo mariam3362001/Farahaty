@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>   باقات وعروض</title>
+  
+</head>
+<body>
+<!-- أضف هذا القسم داخل <body> في صفحتك الرئيسية -->
+<section class="packages-section">
+  <h2 class="section-title">باقات وعروض فرحتي</h2>
+  <h2 class="section-title">موسم العروض يبدأ من هنا
+ <section class="packages-section">
+  </div>
+</section>
+  <div class="cards-grid">
+    <!-- مثال: باقة كاملة (باقة الزفاف الذهبي) -->
+    <article class="service-card" data-id="gold">
+      <img src="img/c83f3b3a488b269ee3a028443c1075ae.jpg" alt="باقة الزفاف الذهبي" class="card-img">
+      <div class="card-body">
+        <h3 class="card-title">باقة الزفاف الذهبي</h3>
+        <p class="card-price">السعر: <strong>₪ ???</strong></p>
+        <ul class="card-list">
+          <li>المنسق: </li>
+          <li>الدي جي: </li>
+          <li>فنّانين: </li>
+          <li>الوجبات :</li>
+          <li>الكوافير: </li>
+          <li>تأجير فساتين: </li>
+          <li>تجهيز عريس:  </li>
+          <li>مصور:  </li>
+        </ul>
+        <div class="card-actions">
+          <button class="btn details-btn" data-target="gold">تفاصيل</button>
+          <a class="btn primary" href="https://wa.me/qr/JWMHAGVXFRUYJ1">احجز عبر واتساب</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- مثال: باقة فضية -->
+    <article class="service-card" data-id="silver">
+      <img src="img/d7b327714632c17cf114c46d18de7607.jpg" alt="باقة الزفاف الفضي" class="card-img">
+      <div class="card-body">
+        <h3 class="card-title">باقة الزفاف الفضي</h3>
+        <p class="card-price">السعر: <strong>₪ ???</strong></p>
+        <ul class="card-list">
+          <li>المنسق: </li>
+          <li>الدي جي: </li>
+          <li>فنّانين: </li>
+          <li>الوجبات:</li>
+          <li>الكوافير: </li>
+          <li>تأجير فساتين: </li>
+          <li>تجهيز عريس: </li>
+          <li>مصور: </li>
+        </ul>
+        <div class="card-actions">
+          <button class="btn details-btn" data-target="silver">تفاصيل</button>
+          <a class="btn primary" href="https://wa.me/qr/JWMHAGVXFRUYJ1">احجز عبر واتساب</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- مثال: خدمة منفصلة (مصور) -->
+    <article class="service-card" data-id="photographer">
+      <img src="img/c83f3b3a488b269ee3a028443c1075ae.jpg" alt="خدمة التصوير" class="card-img">
+      <div class="card-body">
+        <h3 class="card-title">خدمة مصوّر احترافي</h3>
+        <p class="card-price">السعر: <strong>₪ ??? / جلسة</strong></p>
+        <ul class="card-list">
+          <li>المصور:</li>
+          <li>نوع الخدمة:  </li>
+          <li>المخرجات: </li>
+        </ul>
+        <div class="card-actions">
+          <button class="btn details-btn" data-target="photographer">تفاصيل</button>
+          <a class="btn primary" href="https://wa.me/qr/JWMHAGVXFRUYJ1">احجز عبر واتساب</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- مثال: كوافير -->
+    <article class="service-card" data-id="hairdresser">
+      <img src="img/c83f3b3a488b269ee3a028443c1075ae.jpg" alt="خدمة الكوافير" class="card-img">
+      <div class="card-body">
+        <h3 class="card-title">خدمة كوافير وتجهيز العروس</h3>
+        <p class="card-price">السعر: <strong>₪ ???</strong></p>
+        <ul class="card-list">
+          <li>الكوافير: </li>
+          <li>خدمات: </li>
+          <li>خدمات إضافية: </li>
+        </ul>
+        <div class="card-actions">
+          <button class="btn details-btn" data-target="hairdresser">تفاصيل</button>
+          <a class="btn primary" href="https://wa.me/qr/JWMHAGVXFRUYJ1">احجز عبر واتساب</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- أضف بطاقات أخرى بنفس الشكل: تأجير فساتين، تجهيز عريس، وجبات، دي جي، فرقة فنية ... -->
+  </div>
+</section>
+
+<!-- نوافذ التفاصيل (modals) - ضعها في نهاية الـ body -->
+<!-- تفصيل باقة ذهبية -->
+<div class="modal" id="modal-gold" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <h3>تفاصيل باقة الزفاف الذهبي</h3>
+    <p><strong>محتويات الباقة:</strong></p>
+    <ul>
+      <li>تنسيق كامل للمكان + تجهيز استقبال الضيوف</li>
+      <li>دي جي محترف مع نظام صوتي مناسب لمساحة القاعة</li>
+      <li>فرقة فنية (3 أعضاء) لمدة 3 ساعات</li>
+      <li>بوفيه كامل مع خيارات نباتية وحلويات</li>
+      <li>مصور فوتوغرافي + فيديوجرافر مع ألبوم رقمي</li>
+      <li>تجهيز للعروس (ميك أب وتسريحة) وتجهيز للعريس</li>
+      <li>تأجير أثاث وديكورات وإضاءة</li>
+    </ul>
+    <p>للحجز تواصل </p>
+  </div>
+</div>
+
+<!-- تفصيل باقة فضية -->
+<div class="modal" id="modal-silver" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <h3>تفاصيل باقة الزفاف الفضي</h3>
+    <p><strong>محتويات الباقة:</strong></p>
+    <ul>
+      <li>تنسيق الحدث مع قائمة مزودين مختارة</li>
+      <li>دي جي مع معدات صوتية متوسطة</li>
+      <li>بوفيه بسيط لعدد محدد من الضيوف</li>
+      <li>مصور فوتوغرافي للتغطية الأساسية</li>
+      <li>تجهيزات للعروس والعريس (أساسية)</li>
+    </ul>
+    <p>للحجز تواصل </p>
+  </div>
+</div>
+
+<!-- تفصيل مصور -->
+<div class="modal" id="modal-photographer" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <h3>تفاصيل خدمة المصوّر</h3>
+    <p>جلسة تصوير كاملة تشمل:</p>
+    <ul>
+      <li>جلسة تحضيرية قبل الحفل</li>
+      <li>تغطية الحفل وصولاً إلى التصوير الجماعي</li>
+      <li>تسليم ملف رقمي + 20 صورة مطبوعة</li>
+    </ul>
+    <p>اتصال: </p>
+  </div>
+</div>
+
+<!-- تفصيل كوافير -->
+<div class="modal" id="modal-hairdresser" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <h3>تفاصيل خدمة الكوافير</h3>
+    <p>خدماتنا تشمل:</p>
+    <ul>
+      <li>تجربة تسريحة قبل الحدث</li>
+      <li>ميك اب تجميلي مع منتجات عالية الجودة</li>
+      <li>خدمات زينة وباروكات عند الطلب</li>
+    </ul>
+    <p>اتصال:</p>
+  </div>
+</div>
+
+<!-- ضع هذا الـ CSS (يمكنك نقله لملف style.css) -->
+<style>
+  .section-title { text-align: center; font-family: 'Tajawal', sans-serif; margin: 30px 0; }
+  .cards-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); padding: 0 16px 40px; }
+  .service-card { background:#e2d3d3; border-radius:12px; box-shadow:0 6px 18px rgba(119, 13, 13, 0.884); overflow:hidden; direction:rtl; }
+  .card-img { width:100%; height:160px; object-fit:cover; display:block; }
+  .card-body { padding:14px; font-family: 'El Messiri', sans-serif; }
+  .card-title { margin:0 0 8px; font-size:1.15rem; }
+  .card-price { margin:0 0 8px; color:#770a18de; font-weight:700; }
+  .card-list { list-style: none; padding:0; margin:0 0 12px; font-size:0.95rem; line-height:1.5; color:#181717; }
+  .card-list li { padding:4px 0; border-bottom: 1px dashed #eee; }
+  .card-actions { display:flex; gap:8px; flex-wrap:wrap; }
+  .btn { padding:8px 12px; border-radius:8px; border:1px solid #920926; background:transparent; cursor:pointer; text-decoration:none; color:#21266d; font-weight:600; }
+  .btn.primary { background:#770a18de; color:#090c38; border: none; }
+  .btn.details-btn { background:transparent; }
+  /* modal */
+  .modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.5); z-index:40; padding:20px; }
+  .modal[aria-hidden="false"] { display:flex; }
+  .modal-content { background:#fff; padding:20px; border-radius:12px; max-width:720px; width:100%; box-shadow:0 10px 40px rgba(53, 50, 50, 0.15); font-family: 'Tajawal', sans-serif; direction:rtl; }
+  .modal-close { position:absolute; right:18px; top:18px; background:transparent; border:none; font-size:24px; cursor:pointer; color:#13121298; }
+  @media (max-width:480px) {
+    .card-img { height:120px; }
+    .card-body { padding:12px; }
+  }
+</style>
+
+<!-- ضع هذا الـ JS (يمكنك نقله لملف script.js) -->
+<script>
+  // فتح المودال بحسب data-target
+  document.querySelectorAll('.details-btn').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      const id = e.currentTarget.getAttribute('data-target');
+      const modal = document.getElementById('modal-' + id);
+      if(modal) modal.setAttribute('aria-hidden', 'false');
+    });
+  });
+  // إغلاق المودال
+  document.querySelectorAll('.modal').forEach(mod=>{
+    mod.addEventListener('click', e=>{
+      if(e.target === mod) mod.setAttribute('aria-hidden', 'true');
+    });
+    mod.querySelectorAll('.modal-close').forEach(close=>{
+      close.addEventListener('click', ()=> mod.setAttribute('aria-hidden','true'));
+    });
+  });
+</script>
+
+
+
+
+
+</body>
+</html>

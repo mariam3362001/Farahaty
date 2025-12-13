@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جهازك علينا</title>
+
+<style>
+    body {
+        font-family: "Tajawal", sans-serif;
+        background-color: #dfb5be;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #110103de;
+        margin-bottom: 40px;
+    }
+
+    .products-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 20px;
+    }
+
+    .product-box {
+        background: #b15f78;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 2px 10px rgba(53, 1, 1, 0.856);
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .product-box:hover {
+        transform: scale(1.05);
+    }
+
+    .product-box img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 15px;
+    }
+
+    .product-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #141414b9;
+        margin-bottom: 10px;
+    }
+
+    .product-price {
+        font-size: 18px;
+        color: #99003d;
+        margin-bottom: 15px;
+    }
+
+    .order-btn {
+        background-color: #770a18de;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        font-size: 17px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .order-btn:hover {
+        background-color: #590518;
+    }
+
+</style>
+</head>
+
+<body>
+
+<h1>جهازك علينا</h1>
+
+<div class="products-container">
+
+    <!-- المنتج رقم 1 -->
+    <div class="product-box">
+        <img src="img/1b088923bc8bb1314fa2e7d3c26f279e.jpg" alt="المنتج الأول">
+        <div class="product-title">منتج رقم 1</div>
+        <div class="product-price">50$</div>
+        <button class="order-btn">اطلب الآن</button>
+    </div>
+
+    <!-- المنتج رقم 2 -->
+    <div class="product-box">
+        <img src="img/1b088923bc8bb1314fa2e7d3c26f279e.jpg" alt="المنتج الثاني">
+        <div class="product-title">منتج رقم 2</div>
+        <div class="product-price">80$</div>
+        <button class="order-btn">اطلب الآن</button>
+    </div>
+
+    <!-- المنتج رقم 3 -->
+    <div class="product-box">
+        <img src="img/1b088923bc8bb1314fa2e7d3c26f279e.jpg" alt="المنتج الثالث">
+        <div class="product-title">منتج رقم 3</div>
+        <div class="product-price">120$</div>
+        <button class="order-btn">اطلب الآن</button>
+    </div>
+
+</div>
+
+</body>
+</html>
