@@ -30,12 +30,12 @@
 
     /* ===== reusable slider wrapper ===== */
     .venue-slider {
-      width: 50%;
+      width: 80%;
       max-width: 980px;
       margin: 40px auto;
       position: relative;
       background: var(--card-bg);
-      border-radius: 14px;
+      border-radius: 18px;
       padding: 20px;
       box-shadow: var(--shadow);
     }
@@ -56,7 +56,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       opacity: 0;
       transition: opacity .6s ease, transform .6s ease;
       transform: scale(.98);
@@ -73,9 +73,9 @@
     .venue-slider .slide img{
       width: 100%;
       height: 300px;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(230, 233, 240, 0.733);
+      box-shadow: 0 80px 50px rgba(39, 65, 128, 0.733);
     }
 
     /* اسم القاعة والسعر تحت الصورة */
@@ -162,6 +162,8 @@
     <h1>نحن من نصنعها كل ما تحتاجه في مكان واحد... معنا حلمك واقع لا يُنسى</h1>
   </div>
 
+ 
+
   <!-- ======= Slider (القاعات) ======= -->
   <section class="venue-slider" data-slider-id="1">
     <div class="slider-viewport">
@@ -236,7 +238,7 @@
   
   
   <!-- ======= Slider3 (الفنانين) ======= -->
-   <section class="venue-slider" data-slider-id="2">
+   <section class="venue-slider" data-slider-id="3">
     <div class="slider-viewport">
       <div class="slide active">
         <img src="img/24a481c7ffbf6e745f16a647d2902d8e.jpg" alt="دي جي روز">
@@ -266,7 +268,7 @@
   
   
   <!-- ======= Slider4 (الفنانات) ======= -->
-   <section class="venue-slider" data-slider-id="2">
+   <section class="venue-slider" data-slider-id="4">
     <div class="slider-viewport">
       <div class="slide active">
         <img src="img/24a481c7ffbf6e745f16a647d2902d8e.jpg" alt="دي جي روز">
@@ -289,7 +291,7 @@
   
   
   <!-- ======= Slider5 (المصورين) ======= -->
-   <section class="venue-slider" data-slider-id="2">
+   <section class="venue-slider" data-slider-id="5">
     <div class="slider-viewport">
       <div class="slide active">
         <img src="img/f66f006de693cd88ed89412854e016d9.jpg" alt="دي جي روز">
@@ -318,23 +320,90 @@
   
   
   <!-- ======= Slider6 (المصورات) ======= -->
-   <section class="venue-slider" data-slider-id="2">
+   <section class="venue-slider" data-slider-id="6">
     <div class="slider-viewport">
       <div class="slide active">
-        <img src="img/f66f006de693cd88ed89412854e016d9.jpg" alt="دي جي روز">
+        <img src="img/خدمات/IMG_٢٠٢٥١٢٢٧_٠٣٢٤٢٠.jpg" alt=" المصوره رهاءالبيضاني">
         <div class="caption">
-          <div class="name">المصوره</div>
-          <div class="price">?ريال</div>
+          <div class="name">المصوره رهاء البيضاني"عرضvip"</div>
+          <div class="price">250الف</div>
         </div>
       </div>
 
       <div class="slide">
-        <img src="img/f66f006de693cd88ed89412854e016d9.jpg" alt="دي جي مكس">
+        <img src="img/خدمات/IMG_٢٠٢٥١٢٢٧_٠٣١٦١٦.jpg" alt="عروض المصوره رهاء">
         <div class="caption">
-         <div class="name">المصوره</div>
-          <div class="price"> ريال</div>
+         <div class="name">العرض الاول</div>
+          <div class="price"> 80الف</div>
         </div>
       </div>
+
+      
+      <div class="slide">
+        <img src="img/خدمات/IMG_٢٠٢٥١٢٢٧_٠٣٢٤٥٩.jpg" alt="عروض المصوره رهاء">
+        <div class="caption">
+         <div class="name">العرض الثاني</div>
+          <div class="price"> 100الف</div>
+        </div>
+      </div>
+
+      
+      <div class="slide">
+        <img src="img/خدمات/IMG_٢٠٢٥١٢٢٧_٠٣٢٥٢٦.jpg" alt="عروض المصوره رهاء">
+        <div class="caption">
+         <div class="name">العرض الثالث</div>
+          <div class="price"> 200الف</div>
+        </div>
+      </div>
+
+      <!-- أضف حتى 20 عند الحاجة -->
+    </div>
+
+    <button class="prev" aria-label="السابق">&#10094;</button>
+    <button class="next" aria-label="التالي">&#10095;</button>
+
+    <div class="dots"></div>
+  </section>
+
+  
+  <!-- ======= Slider6 (وجبات وترت) ======= -->
+   <section class="venue-slider" data-slider-id="7">
+    <div class="slider-viewport">
+      <div class="slide active">
+        <img src="img/خدمات/IMG-20251226-WA0009.jpg" alt="ديلايت كيكس">
+        <div class="caption">
+          <div class="name">ديلايت كيكس</div>
+          
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="img/خدمات/IMG_٢٠٢٥١٢٢٧_٠٣١٣٣٥.jpg" alt="ديلايت كيكس">
+        <div class="caption">
+         <div class="name">ترته طابقين بشكل عصري</div>
+          <div class="price"> 40الف</div>
+        </div>
+      </div>
+
+<div class="slide">
+        <img src="img/خدمات/IMG-20251226-WA0002.jpg" alt="ديلايت كيكس">
+        <div class="caption">
+         <div class="name">ترته طابق واحد بعجينه سكر</div>
+          <div class="price"> 25الف</div>
+        </div>
+      </div>
+
+
+<div class="slide">
+        <img src="img/خدمات/IMG_٢٠٢٥١٢٢٧_٠٣١٢٠٩.jpg" alt="ديلايت كيكس">
+        <div class="caption">
+         <div class="name">ترته طابق واحد </div>
+          <div class="price"> 18الف</div>
+        </div>
+      </div>
+
+
+      
 
       <!-- أضف حتى 20 عند الحاجة -->
     </div>
@@ -386,9 +455,17 @@
 
      <label>المصور/ة</label>
     <select id="occasionSelect">
-      <option>المصور1</option>
-      <option> المصوره1</option>
-      <option>أخرى</option>
+      <option>عرضvip</option>
+      <option> العرض الاول</option>
+      <option>العرض الثاني</option>
+       <option>العرض الثالث</option>
+    </select>
+
+    
+     <label>وجبات-ترت-بوفي</label>
+    <select id="occasionSelect">
+      <option>ديلايت كيكس</option>
+      <option>سارونه كيك</option>
     </select>
 
 
@@ -468,7 +545,7 @@
         const occasion = document.getElementById('occasionSelect').value || 'غير مذكور';
         const date = document.getElementById('dateInput').value || 'غير مذكور';
 
-        const phone = "https://wa.me/qr/JWMHAGVXFRUYJ1"; // ضع رقمك هنا بصيغة البلد+رقم (بدون +)
+        const phone = "https://wa.me/967780087883"; // ضع رقمك هنا بصيغة البلد+رقم (بدون +)
 
         const msg =
 `السلام عليكم،
